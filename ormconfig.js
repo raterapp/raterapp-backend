@@ -12,7 +12,7 @@ module.exports = [
     password: DB_PASSWORD,
     database: DB_DATABASE,
     synchronize: true,
-    entities: ['src/**.module/*-model.ts'],
+    entities: ['dist/**/*.entity.js'],
     subscribers: ['src/**.module/*-subscriber.ts'],
     migrations: ['src/migrations/*.ts'],
   },
