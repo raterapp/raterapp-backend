@@ -1,7 +1,7 @@
-import { Injectable } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
-import { User } from './entities/user.entity';
+import { Injectable } from '@nestjs/common'
+import { InjectRepository } from '@nestjs/typeorm'
+import { Repository } from 'typeorm'
+import { User } from './entities/user.entity'
 
 @Injectable()
 export class UsersService {
@@ -13,6 +13,6 @@ export class UsersService {
     return this.userRepository.findOne({
       where: { phone },
       relations: ['ratings'],
-    });
+    })
   }
 }

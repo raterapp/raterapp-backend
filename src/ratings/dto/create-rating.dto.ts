@@ -1,6 +1,6 @@
-import { IsString } from 'class-validator';
+import { IsString } from 'class-validator'
 
 export class CreateRatingDto {
   @IsString()
-  content: string;
+  content: string
 }

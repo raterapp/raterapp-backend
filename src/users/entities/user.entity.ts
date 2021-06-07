@@ -1,14 +1,14 @@
-import { Rating } from 'src/ratings/entities/rating.entity';
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Rating } from 'src/ratings/entities/rating.entity'
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm'
 
 @Entity()
 export class User {
   @PrimaryGeneratedColumn()
-  id: number;
+  id: number
 
   @Column()
-  phone: string;
+  phone: string
 
   @OneToMany(() => Rating, (rating) => rating.user)
-  ratings: Rating[];
+  ratings: Rating[]
 }

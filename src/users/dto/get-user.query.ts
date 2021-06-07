@@ -1,6 +1,6 @@
-import { IsPhoneNumber } from 'class-validator';
+import { IsPhoneNumber } from 'class-validator'
 
 export default class GetUserQuery {
   @IsPhoneNumber()
-  phone: string;
+  phone: string
 }
