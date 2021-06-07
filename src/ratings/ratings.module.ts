@@ -1,13 +1,17 @@
 import { Module } from '@nestjs/common'
-import { RatingsService } from './ratings.service'
+import { RatingsService } from './services/ratings.service'
 import { RatingsController } from './ratings.controller'
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { Rating } from './entities/rating.entity'
-import { User } from 'src/users/entities/user.entity'
+import { UsersModule } from 'src/users/users.module'
+import EmailNotificationService from './services/email-notification.service'
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Rating, User])],
+  imports: [TypeOrmModule.forFeature([Rating]), UsersModule],
   controllers: [RatingsController],
-  providers: [RatingsService],
+  providers: [
+    RatingsService,
+    { provide: 'NotificationService', useClass: EmailNotificationService },
+  ],
 })
 export class RatingsModule {}
