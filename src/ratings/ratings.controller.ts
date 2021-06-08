@@ -9,6 +9,6 @@ export class RatingsController {
 
   @Post()
   public create(@Body() createRatingDto: CreateRatingDto, @Query() query: CreateRatingQuery) {
-    return this.ratingsService.create(query.phone, createRatingDto)
+    return this.ratingsService.create(query.email, createRatingDto)
   }
 }

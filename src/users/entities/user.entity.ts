@@ -7,7 +7,7 @@ export class User {
   id: number
 
   @Column()
-  phone: string
+  email: string
 
   @OneToMany(() => Rating, (rating) => rating.user)
   ratings: Rating[]

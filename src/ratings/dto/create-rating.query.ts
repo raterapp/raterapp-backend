@@ -1,6 +1,6 @@
-import { IsPhoneNumber } from 'class-validator'
+import { IsEmail } from 'class-validator'
 
 export default class CreateRatingQuery {
-  @IsPhoneNumber()
-  phone: string
+  @IsEmail()
+  email: string
 }

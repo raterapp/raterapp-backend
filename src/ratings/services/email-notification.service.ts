@@ -11,11 +11,15 @@ export default class EmailNotificationService implements INotificationService {
   })
 
   public async send(config: NotificationConfig) {
-    await this.mailgun.messages().send({
-      to: config.to,
-      from: config.from,
-      subject: config.re,
-      text: config.text,
-    })
+    await this.mailgun
+      .messages()
+      .send({
+        to: config.to,
+        from: config.from,
+        subject: config.re,
+        text: config.text,
+        host: 'api.eu.mailgun.net',
+      })
+      .finally(console.log)
   }
 }
